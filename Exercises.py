@@ -1,4 +1,5 @@
 import numpy as np
+from matplotlib.pyplot import subplots
 
 x = np.array([[1,2,3,4,5,6]])
 print(x)
@@ -60,3 +61,19 @@ print(np.mean(y), y.mean())
 # Variance
 print(np.var(y), y.var(), np.mean((y-y.mean())**2))
 
+
+
+""" Example """
+seed = np.random.default_rng(3)
+matrix = seed.normal(loc=0, scale=1, size=30)
+matrix_reshape = matrix.reshape((10,3))
+print(matrix_reshape)
+print(f'Mean:\n {matrix_reshape.mean(axis=0)} u')
+print(f'Variance:\n {matrix_reshape.var()} u*u')
+print(f'Standard deviation:\n {matrix_reshape.std()} u')
+
+
+fig, ax = subplots(figsize=(8,8))
+x = rng.standard_normal(100)
+y = rng.standard_normal(100)
+ax.scatter(x,y, 'o')
